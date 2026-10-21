@@ -385,14 +385,14 @@ def scan_surroundings():
 @tool(
     "Point the camera (your eyes) by moving its pan/tilt servos, then hold there. "
     "pan: 0 to 180 degrees, 90 = straight ahead, larger values look further LEFT, "
-    "smaller further RIGHT. tilt: 35 to 180 degrees, 90 = level, larger looks UP, "
+    "smaller further RIGHT. tilt: 35 to 180 degrees, 50 = level, larger looks UP, "
     "smaller looks DOWN (35 is the lowest it can go). Give either or both. The "
     "new view appears in your NEXT camera frame, not in this tool's result. "
     "Looking around does not move the wheels; the ultrasonic sensor does not "
     "follow the camera. Re-centre (90, 90) before driving so the picture matches "
     "the direction of travel.",
     pan_degrees=number("Pan angle 0-180, 90 = straight ahead.", 0, 180, required=False),
-    tilt_degrees=number("Tilt angle 35-180, 90 = level.", 35, 180, required=False),
+    tilt_degrees=number("Tilt angle 35-180, 50 = level.", 35, 180, required=False),
 )
 def set_camera(pan_degrees=None, tilt_degrees=None):
     if pan_degrees is None and tilt_degrees is None:
