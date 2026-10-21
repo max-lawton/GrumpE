@@ -1,12 +1,6 @@
-"""AI car: a vision-language model drives the Yahboom car through tool calls.
 
-Each loop:  camera frame + car state  ->  Ollama (gemma4 cloud)  ->  tool calls
-            -> run them on the car -> send results back -> repeat until the
-            model answers in plain text -> next loop.
+# GrumpE
 
-    export OLLAMA_API_KEY=...        # never hard-code the key in this file
-    python ai_car.py
-"""
 import base64
 import json
 import os

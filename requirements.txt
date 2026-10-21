@@ -1,0 +1,7 @@
+# Core runtime requirements for the GrumpE smart car project
+# Install with: pip install -r requirements.txt
+
+gpiozero
+opencv-python
+pyserial
+numpy
