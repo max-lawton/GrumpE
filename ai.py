@@ -389,7 +389,7 @@ def scan_surroundings():
     "smaller looks DOWN (35 is the lowest it can go). Give either or both. The "
     "new view appears in your NEXT camera frame, not in this tool's result. "
     "Looking around does not move the wheels; the ultrasonic sensor does not "
-    "follow the camera. Re-centre (90, 90) before driving so the picture matches "
+    "follow the camera. Re-centre (50, 90) before driving so the picture matches "
     "the direction of travel.",
     pan_degrees=number("Pan angle 0-180, 90 = straight ahead.", 0, 180, required=False),
     tilt_degrees=number("Tilt angle 35-180, 50 = level.", 35, 180, required=False),
@@ -649,6 +649,7 @@ def main():
                 time.sleep(LOOP_DELAY_S)
         except KeyboardInterrupt:
             print("\nstopping")
+            camera.release()
         finally:
             car.drive.stop()
             camera.release()
